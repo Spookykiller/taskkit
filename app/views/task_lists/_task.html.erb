@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="task_image">
+        <img src="../images/phone_img.png"></img>
+    </div>
+    <div class="task_heading">
+        <h1><%= @task_list.title %></h1>
+        <p class="user_info">For <%= @task_list.client_email %></p>
+    </div>
+    
+    <div class="task_content">
+      <%= render @task_list.task_items %>
+    </div>
+    
+    <div class="task_finish">
+        <div class="row">
+            <p>Finish task</p>
+        </div>
+    </div>
+</div>
+
+
+<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
+<%= link_to 'Back', task_lists_path %>

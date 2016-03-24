@@ -1,0 +1,16 @@
+<% content_for :lijst do %>
+  <% @task_lists.each do |task_list| %>
+    <div class="row">
+        <div class="task">
+            <input type="checkbox" name="done" value="check" class="checkbox">
+            <div class="task_info">
+                <h2><%= task_list.title %></h2>
+                <p class="user_info">For <%= task_list.client_email %></p>
+                <td><%= link_to 'Show', view_task_task_list_path(task_list), remote: true %></td>
+                <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
+                <td><%= link_to 'Destroy', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </div>
+        </div>
+    </div>
+  <% end %>
+<% end %>

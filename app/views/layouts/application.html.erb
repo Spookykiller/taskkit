@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome at Task-kit.com</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="side-nav">
+        <nav>
+            <ul>
+              <li class="logo">
+                  <a href="#">
+                      <img src="../images/Task-it_v3.png"></img>
+                  </a>
+              </li>
+              <li>
+                  <%= link_to(new_task_list_path) do %>
+                      <span><i class="fa fa-plus"></i></span>
+                  <% end %>
+              </li>
+              <li id="active">
+                  <a href="https://task-kit-gijs4.c9users.io">
+                      <span><i class="fa fa-home"></i></span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span><i class="fa fa-inbox"></i></span>
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      <span><i class="fa fa-cog"></i></span>
+                  </a>
+              </li>
+        </ul>
+      </nav>
+  </div>
+  
+  <div class="main-content">
+    <section id="tasks">
+        <div class="wrapper">
+          <%= yield :lijst %>
+        </div>
+    </section>
+    
+    <section id="description">
+      <%= yield :zien %>
+    </section>
+      <%= yield %>
+  </div>
+
+</body>
+</html>
